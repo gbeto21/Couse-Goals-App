@@ -46,7 +46,7 @@ export default function App() {
             return item.id
           }}
           renderItem={(itemData) => {
-            return <GoalItem />
+            return <GoalItem text={itemData.item.text} />
           }} />
       </View>
     </View>

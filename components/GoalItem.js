@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 
 const styles = StyleSheet.create({
     goalItem: {
@@ -12,11 +13,11 @@ const styles = StyleSheet.create({
     }
 })
 
-function GoalItem() {
+function GoalItem(props) {
     return (
         <View style={styles.goalItem}>
             <Text style={styles.goalText}>
-                {itemData.item.text}
+                {props.text}
             </Text>
         </View>
     )

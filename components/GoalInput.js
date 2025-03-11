@@ -3,7 +3,8 @@ import {
     TextInput,
     Button,
     StyleSheet,
-    Modal
+    Modal,
+    Image
 } from "react-native";
 import { useState } from "react";
 
@@ -26,10 +27,13 @@ function GoalInput(props) {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            marginBottom: 24,
             padding: 16,
-            borderBottomWidth: 1,
-            borderBottomColor: "#cccccc"
+            backgroundColor: '#311b6b'
+        },
+        image: {
+            width: 100,
+            height: 100,
+            margin: 20
         },
         textInput: {
             borderWidth: 1,
@@ -50,6 +54,10 @@ function GoalInput(props) {
     return (
         <Modal visible={props.visible} animationType="slide">
             <View style={styles.inputContainer}>
+                <Image
+                    style={styles.image}
+                    source={require('../assets/images/goal.png')}
+                />
                 <TextInput
                     style={styles.textInput}
                     placeholder='Your course goal.'

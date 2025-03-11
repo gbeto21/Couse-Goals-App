@@ -1,7 +1,7 @@
 import { useState } from "react";
+import GoalItem from "./components/GoalItem";
 import {
   StyleSheet,
-  Text,
   View,
   Button,
   TextInput,
@@ -46,13 +46,7 @@ export default function App() {
             return item.id
           }}
           renderItem={(itemData) => {
-            return (
-              <View style={styles.goalItem}>
-                <Text style={styles.goalText}>
-                  {itemData.item.text}
-                </Text>
-              </View>
-            )
+            return <GoalItem />
           }} />
       </View>
     </View>
@@ -85,14 +79,6 @@ const styles = StyleSheet.create(
     goalsContainer: {
       flex: 5
     },
-    goalItem: {
-      margin: 8,
-      padding: 8,
-      borderRadius: 6,
-      backgroundColor: '#5e0acc',
-    },
-    goalText: {
-      color: "white"
-    }
+
   }
 );

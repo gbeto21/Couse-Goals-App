@@ -15,8 +15,8 @@ export default function App() {
       }])
   }
 
-  function deleteGoalHandler() {
-    console.log("❌ Deleted");
+  function deleteGoalHandler(id) {
+    setGoals(currentGoals => currentGoals.filter(goal => goal.id !== id))
   }
 
   return (
@@ -33,6 +33,7 @@ export default function App() {
             return <GoalItem
               text={itemData.item.text}
               onDeleteItem={deleteGoalHandler}
+              id={itemData.item.id}
             />
           }} />
       </View>
